@@ -1,0 +1,16 @@
+{
+  "name": "Gradu8_Maths",
+  "version": "1.0.0",
+  "description": "",
+  "main": "javascript.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://samstoppani.github.io/Gradu8Maths",
+  "dependencies": {
+    "gh-pages": "^2.2.0"
+  }
+}
