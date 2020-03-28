@@ -171,8 +171,57 @@
               <textarea name="message" type="" class="form-control wow fadeInDown" data-wow-delay="0.3s" id="messageInput" placeholder="Your Message"></textarea>
             </div>
             <button type="submit" class="btn btn-block col-md-12 my-5 wow fadeInUp" data-wow-delay="0.4s">Get in touch</button>
-            
           </form>
+
+          <form name="contactform" method="post" action="send_form_email.php">
+            <table width="450px">
+            <tr>
+             <td valign="top">
+              <label for="first_name">First Name *</label>
+             </td>
+             <td valign="top">
+              <input  type="text" name="first_name" maxlength="50" size="30">
+             </td>
+            </tr>
+            <tr>
+             <td valign="top">
+              <label for="last_name">Last Name *</label>
+             </td>
+             <td valign="top">
+              <input  type="text" name="last_name" maxlength="50" size="30">
+             </td>
+            </tr>
+            <tr>
+             <td valign="top">
+              <label for="email">Email Address *</label>
+             </td>
+             <td valign="top">
+              <input  type="text" name="email" maxlength="80" size="30">
+             </td>
+            </tr>
+            <tr>
+             <td valign="top">
+              <label for="telephone">Telephone Number</label>
+             </td>
+             <td valign="top">
+              <input  type="text" name="telephone" maxlength="30" size="30">
+             </td>
+            </tr>
+            <tr>
+             <td valign="top">
+              <label for="comments">Comments *</label>
+             </td>
+             <td valign="top">
+              <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
+             </td>
+            </tr>
+            <tr>
+             <td colspan="2" style="text-align:center">
+              <input type="submit" value="Submit">   <a href="http://www.freecontactform.com/email_form.php">Email Form</a>
+             </td>
+            </tr>
+            </table>
+            </form>
 
           <div class="row" id="copyright">
             <div class="col-md-12">
