@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta http_equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width = device-width, initial-scale = 1">
-    <title>Gradu8 Maths</title>
+    <meta name="description" content="">
+    <title>GRADU8 MATHS: Mathematics Tuition in Doncaster</title>
+    <link rel="shortcut icon" type="image/png" href="images/logo.png"/>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="animate.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2|Montserrat|Muli|Quicksand|Raleway|Sen&display=swap" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -16,14 +21,53 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" data-auto-replace-svg="nest"></script>
+    <!-- <script src="1351.js"></script> -->
+
 </head>
 <body>
+  
     <header>
        
-        <nav class="navbar navbar-expand-md navbar-light fixed-top scrolling-navbar sticky-top wow fadeIn">
-            <!-- class="navbar navbar-expand-md navbar-light bg-light sticky-top" -->
+    <div class="text-center my-auto p-2" id="announcement">
+      <p>Contact <a class="underline" href="tel:07432263120">07432 263120</a> to book your child's place for academic year 2021. 
+      </p>
+
+      <a id="close" href="#"><i class="fas fa-times"></i></a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+      // Announcement Message
+
+      jQuery.fn.center = function () {
+        var w = $(window);
+        this.css("position","absolute");
+        this.css("top", Math.max(0, ((w.height() - $(this).outerHeight()) / 2) 
+          + w.scrollTop()) + "px");
+        this.css("left", Math.max(0, ((w.width() - $(this).outerWidth()) / 2) 
+          + w.scrollLeft()) + "px");
+        return this;
+      }
+
+      var hasReadAnnouncement = localStorage.getItem("hasReadAnnouncement");
+      if (!hasReadAnnouncement){
+        $('<div>', {id : 'overlay'}).appendTo('body');
+        $("#announcement").fadeIn('slow').center();
+      }
+
+      $("#close").click(function(e){
+        localStorage.setItem("hasReadAnnouncement", "true");
+        $("#announcement").remove();
+        $("#overlay").remove();
+        e.preventDefault();
+      });
+
+    </script> 
+       
+        <nav class="navbar navbar-expand-md navbar-light fixed-top wow fadeIn" data-wow-delay="0.6s">
+           
           <div class="container">
-            <a class="navbar-brand" href="#"><strong>G8M</strong></a>
+            <a class="navbar-brand" href="#"><strong>GM</strong></a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -31,16 +75,22 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="#aboutMe">About <span class="sr-only">(current)</span></a>
+                  <a class="nav-link underline" href="#aboutMe">About <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#testimonials">Testimonials</a>
+                  <a class="nav-link underline" href="#testimonials">Testimonials</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#services">Services</a>
+                  <a class="nav-link underline" href="#services">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
+                  <a class="nav-link underline" href="#recommendations">Recommendations</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link underline" href="#faq">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link underline" href="#contact">Contact</a>
                   </li>
               </ul>
 
@@ -51,116 +101,463 @@
         <!-- Full Page Intro -->
         <div class="view wow fadeIn"  style="background-image: url('images/pen_and_book.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; ">
 
-          <!-- Mask & flexbox options-->
           <div class="mask rgba-black-light align-items-center">
-            <!-- Content -->
+
             <div class="container">
-              <!--Grid row-->
+              
               <div class="row">
-                <!--Grid column-->
+
                 <div class="col-md-12 mb-4 text-center wow fadeInUp centerTitle">
 
-                    <h1 class=" h1-reponsive text-uppercase font-weight-bold wow fadeInDown" data-wow-delay="0.3s"><strong>Gradu8 Maths</strong></h1>
+                    <h1 class=" h1-reponsive text-uppercase font-weight-bold wow fadeInDown" data-wow-delay="0.3s"><strong>Gradu8 Maths</h1>
                     <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s">
-                    <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>Home Tutoring</strong></h5>
-                  
+                    <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>Mathematics Tuition in Doncaster</strong></h5>
+                   
+                
                 </div>
-                <!--Grid column-->
               </div>
-              
-              <!--Grid row-->
             </div>
-            <!-- Content -->
           </div>
-          <!-- Mask & flexbox options-->
         </div>
 
        
     </header>
 
-    <main>
+    <main> 
         <div class="container-fluid padding">
-          <!--Grid row-->
-          <div class="row p-5 text-center" id="aboutMe">
-            <!--Grid column-->
-            <div class="col-md-6 p-3 wow fadeInLeft" data-wow-delay="0.4s">
-                <img class="img-fluid w-75" src="./images/me.JPG" id="profilePhoto"></img>
+          
+          <div class="row p-5" id="aboutMe">
+            <h2 class="col-md-12 p-4 text-center wow fadeInUp">Hi, I'm Andy Kent</h2>
+            
+            <div class="col-lg-6 p-4 my-auto text-center wow fadeIn" data-wow-delay="0.4s" id="profilePhotoContainer">
+                <img class="img-fluid w-100" src="./images/AndyProfile.jpg" id="profilePhoto"></img>
             </div>
-            <div class="col-md-6 p-4 text-center my-auto wow fadeInRight" data-wow-delay="0.4s">
-                
-              <h2>Hi... I'm Andy Kent,</h2>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum molestiae, sapiente voluptatibus minima tenetur veniam temporibus fugiat amet repudiandae magni cupiditate ea accusantium quaerat exercitationem, ut sint nam delectus earum?</p>
 
+            <div class="col-lg-6 my-auto">
+              <p class="p-4 wow fadeIn"  data-wow-delay="0.4s">
+                Whilst I have had a successful career as a senior manager in law enforcement I always maintained a keen interest in maths after studying the subject at King’s College, London.
+                I tutored my sons and niece at GCSE and ‘A’ level and all achieved A*’s and went on to study a maths related degree at a Russell Group university. During this period, and without advertising, I was inundated with requests for tutoring from other parents. I took on a few, but within a short period I had a sizeable waiting list. It is at this point I decided to become a full time maths tutor; a job I love.
+              </p>
             </div>
-            <!--Grid column-->
+
+            <div class="col-md-12 my-auto wow fadeIn"  data-wow-delay="0.4s">
+              <p class="p-4">
+                I am extremely enthusiastic about maths and have found that this can be infectious and inspire others. In fact, on numerous occasions, I have completely changed a child’s attitude towards maths so that it has become their favourite subject. Moreover, the importance of <u><strong>results</strong></u> is something I am acutely aware of. I take great pride in the achievements of my students, from moving up sets at school to getting the grades they need for university. I have an excellent track record of students achieving top grades – try me and you’ll see why.
+              </p>
+            </div>
+              
           </div>
 
-          <div class="row p-4" id="testimonials">
-            <div class="col-md-12">
-              <div id="slides" class="carousel slide carousel-fade" data-ride="carousel">
+          <div class="spacer">
+            
+          </div>
+
+          <div class="row testimonials" id="testimonials">
+              <div id="slides" class="col-md-12 align-self-center carousel slide carousel-fade" data-ride="carousel" data-interval="8000">
 
                 <ul class="carousel-indicators">
                   <li data-target="#slides" data-slide-to="0" class="active"></li>
                   <li data-target="#slides" data-slide-to="1"></li>
                   <li data-target="#slides" data-slide-to="2"></li>
+                  <li data-target="#slides" data-slide-to="3"></li>
+                  <li data-target="#slides" data-slide-to="4"></li>
+                  <li data-target="#slides" data-slide-to="5"></li>
+                  <li data-target="#slides" data-slide-to="6"></li>
+                  <li data-target="#slides" data-slide-to="7"></li>
+                  <li data-target="#slides" data-slide-to="8"></li>
                 </ul>
+
                 <div class="carousel-inner">
 
-                  <div class="carousel-item active">
-                    <h5 class="font-italic wow fadeIn" data-wow-delay="0.4s">Sam</h5>
-                    <h5 class="text-center font-italic p-4 wow fadeIn" data-wow-delay="0.4s">"Andy helped me achieve an A* at A-Level!"</h5>
-                    <h5 class="font-italic text-right wow fadeIn" data-wow-delay="0.4s">Bessacarr</h5>
-                  </div>
-                  <div class="carousel-item">
-                    <h5 class="font-italic">Connor</h5>
-                    <h5 class="text-center font-italic p-4" >"I was predicted a U and got a C with gradua8 maths!"</h5>
-                    <h5 class="font-italic text-right">Bessacarr</h5>
-                  </div>
-                  <div class="carousel-item">
-                    <h5 class="font-italic">Hannah</h5>
-                    <h5 class="text-center font-italic p-4">"After attaining an A at GCSE with Andy, I look forward to starting my A-level in maths!"</h5>
-                    <h5 class="font-italic text-right">Cantley</h5>
+                  <div class="carousel-item active d-flex align-items-center">
+                    <div>
+                      <p class="text-center font-italic p-4 wow fadeIn" data-wow-delay="0.4s">
+                        "Fantastic tuition, friendly and helpful. Helped me achieve my A* at GCSE, top grade at FSMQ and A* at maths and further maths ensuring I secured a place at London School of Economics. Would recommend to anyone wanting an excellent maths tutor."
+                      </p>
+                      <h5 class="font-italic text-right wow fadeIn " data-wow-delay="0.4s">Kiera Glendenning</h5>
+                    </div>
                   </div>
 
+                  <div class="carousel-item d-flex align-items-center">
+                    <div>
+                      <p class="text-center font-italic p-4">
+                        "Andy is an amazing tutor. The confidence he has helped bring out in my son for A-level maths is why I would highly recommend him to anyone seeking support for this subject."
+                      </p>
+                      <h5 class="font-italic text-right">Amna Sohail Khan</h5>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item d-flex align-items-center">
+                    <div>
+                      <p class="text-center font-italic p-4">
+                        "Andy has been fantastic tutoring my son this year Daniel has gone from a grade D to a B in his A level maths in 1 year. He made a big impact and we would highly recommend him."
+                      </p>
+                      <h5 class="font-italic text-right">Becky Wilson</h5>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item d-flex align-items-center">
+                    <div>
+                      <p class="text-center font-italic p-4">
+                        "Andy has been excellent this year with tutoring my daughter in ‘A’ level maths, managed to improve her results in two papers by 5 grades. Always punctual, reliable, supportive and provided lots of extra homework material. Would definitely recommend, thankyou!"
+                      </p>
+                      <h5 class="font-italic text-right">Trina Ryan</h5>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item d-flex align-items-center">
+                    <div>
+                      <p class="text-center font-italic p-4">
+                        "Gradu8maths is a fantastic tutorial path where learning is fun; what looked difficult becomes easy and achievable. The tutor designs an individual plan of learning to get the results. We enjoyed dealing with Andy, who we found to be a professional and dedicated person. We would highly recommend Andy for maths tuition to anyone who has high aspirations or simply needs help. Under Andy’s tutorage my son achieved a grade 9 GCSE, ‘A’ in GCSE statistics and A* in maths and further maths."
+                      </p>
+                      <h5 class="font-italic text-right">Helen Gavin</h5>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item d-flex align-items-center">
+                    <div>
+                      <p class="text-center font-italic p-4">
+                        "Andy is an excellent tutor and helped me throughout year 13. At the end of year 12 I achieved a D grade in maths, however with Andy’s help I was able to achieve an A at the end of year 13 in ‘A’ level maths. Would definitely recommend."
+                      </p>
+                      <h5 class="font-italic text-right">Joseph Clayton</h5>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item d-flex align-items-center">
+                    <div>
+                      <p class="text-center font-italic p-4">
+                        "Don't think I would be able to even pass GCSE maths without Andy! Great tutor who makes you feel very comfortable, definitely recommend to anyone I came on leaps and bounds!"
+                      </p>
+                      <h5 class="font-italic text-right">Abbie Dobson</h5>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item d-flex align-items-center">
+                    <div>
+                      <p class="text-center font-italic p-4">
+                        "Andy's approach really clicked with my son and the AS/A level tuition sessions helped hugely to boost his confidence. We'll certainly be retaining Andy's services for the final year of my son's A level Maths. Thoroughly recommended!"
+                      </p>
+                      <h5 class="font-italic text-right">Steve Wainwright</h5>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item d-flex align-items-center">
+                    <div>
+                      <p class="text-center font-italic p-4">
+                        "Andy has helped my daughter to gain confidence and achieve an excellent GCSE result. He explains things in a clear and logical way. I would highly recommend Andy as a tutor."
+                      </p>
+                      <h5 class="font-italic text-right">Ayesha Zafar</h5>  
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+          </div>
+
+          <div class="col-md-12 text-center spacer" id="services">
+            <a href="https://www.facebook.com/pg/Gradu8maths/reviews/?ref=page_internal" target="_blank" class="btn reviewBtn wow fadeInUp" data-wow-delay="0.4s">Write a Review</a>
+          </div>
+
+          <div class="row pt-5 services" style="background-image: url('images/services.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;" >
+            <div class="col-md-12 pb-3">
+              <h2 class="text-center wow fadeInDown" data-wow-delay="0.4s">Services</h2>
+            </div>
+
+            <div class="col-md-12 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="mx-5 my-3 p-5 card">
+                <div class="row">
+                  <div class="col-sm-3 text-center mx-auto my-auto py-5">
+                    <i class="fas fa-home fa-5x"></i>
+                  </div>
+                  <div class="col-sm-9 my-auto">
+                    <h4>Home Tutoring</h4>
+                    <p>
+                      Studies have shown that children learn best when being taught one-to-one and in comfortable and familiar surroundings. For this reason I travel to you to tutor as I firmly believe children learn best in the comfort of their own home.
+                    </p>
+                  </div>
                 </div>
                 
               </div>
             </div>
+            <div class="col-md-12 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="mx-5 my-3 p-5 card">
+                <div class="row">
+                  <div class="col-sm-3 text-center mx-auto my-auto py-5">
+                    <!-- <i class="fas fa-wave-sine fa-5x"></i> -->
+                    <img src="./images/sineWave.png" style="width: 100px">
+                  </div>
+                  <div class="col-sm-9 my-auto">
+                    <h4>Flexible To Suit Your Needs</h4>
+                    <p>
+                      I tutor all ages in preparation for:
+
+                      <ul>
+                        <li>SAT’s</li>
+                        <li>Entrance exams</li>
+                        <li>GCSE maths (I also offer GCSE statistics as an additional qualification)</li>
+                        <li>FSMQ (Free Standing Maths Qualification for high achieving GCSE students)</li>
+                        <li>‘A’ level maths</li>
+                        <li>‘A’ level further maths</li>
+                      </ul>
+                      
+                      I also offer bespoke tuition for other less common exams e.g. Nursing exams, MAT (Oxford entrance exam), STEP (Cambridge entrance exam) and undergraduate engineering exams.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-md-12 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="mx-5 my-3 p-5 card">
+                <div class="row">
+                  <div class="col-sm-3 text-center mx-auto my-auto py-5">
+                    <i class="fas fa-plus fa-5x"></i>
+                  </div>
+                  <div class="col-sm-9 my-auto">
+                    <h4>And More</h4>
+                    <p>
+                      A lesson is typically one-hour in duration although ‘A’ level students (and above) often prefer a two-hour lesson given the complexity of some topics.
+                    </p>
+                    
+                    <p>
+                      At Easter and just prior to the exams I offer three-hour revision sessions. During these we target areas that are in need of development and also practice exam technique. These are tough sessions but the results speak for themselves!
+                    </p>
+                  </div>
+                </div>
+                  
+              </div>
+            </div>
           </div>
 
-          <div class="row pt-5 services" style="background-image: url('images/services2.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;" id="services">
-            <div class="col-md-12">
-              <h2 class="text-center wow fadeInDown" data-wow-delay="0.4s">Services</h2>
+          <div class="row p-5" id="recommendations">
+            <div class="col-md-12 py-5 ">
+              <h2 class="text-center wow fadeInDown" data-wow-delay="0.4s">Recommendations</h2>
             </div>
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-              <div class="m-3 p-5 card">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum in vel earum odit eaque tempora esse qui nihil quam? Repellendus sequi voluptates atque voluptatum. Architecto ratione sed officiis atque optio.</p>
-              </div>
-            </div>
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-              <div class="m-3 p-5 card">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum in vel earum odit eaque tempora esse qui nihil quam? Repellendus sequi voluptates atque voluptatum. Architecto ratione sed officiis atque optio.</p>
-              </div>
-            </div>
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-              <div class="m-3 p-5 card">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum in vel earum odit eaque tempora esse qui nihil quam? Repellendus sequi voluptates atque voluptatum. Architecto ratione sed officiis atque optio.</p>
-              </div>
-            </div>
-          </div>
-          
 
+            <div class="col-md-12 px-5 mx-auto wow fadeIn" data-wow-delay="0.5s">
+              <p>
+                My students often ask me to recommend tutors for other subjects, particularly English and the sciences. I must stress at this point that I do not employ these people nor do I receive an introductory fee, I simply want to make my students aware of the very best tutors out there. My recommendations are based solely on the feedback that I’ve received from students throughout my 10+ years in the tutoring business.
+              </p>
+            </div>
+
+            <div class="col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="my-3 p-5 card recommendationsCard">
+                <div class="row">
+                  <div class="col mx-auto text-center my-auto py-5">
+                    <i class="fas fa-pen-alt fa-2x"></i>
+                    <h4>English</h4>
+                  </div>
+                  <div class="col m-auto p-3">
+                    <p class="m-auto">
+                      Details Coming Soon.       
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="my-3 p-5 card recommendationsCard">
+                <div class="row">
+                  <div class="col mx-auto text-center my-auto py-5">
+                    <i class="fas fa-microscope fa-2x"></i>
+                    <h4>Biology</h4>
+                  </div>
+                  <div class="col m-auto p-3">
+                    <p class="m-auto">
+                      Details Coming Soon.       
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="my-3 p-5 card recommendationsCard">
+                <div class="row">
+                  <div class="col mx-auto text-center my-auto py-5">
+                    <i class="fas fa-flask fa-2x"></i>
+                    <h4>Chemistry</h4>
+                  </div>
+                  <div class="col m-auto p-3">
+                    <p class="m-auto">
+                      Details Coming Soon.       
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="my-3 p-5 card recommendationsCard">
+                <div class="row">
+                  <div class="col mx-auto  text-center my-auto py-5">
+                    <i class="fas fa-atom fa-2x"></i>
+                    <h4>Physics</h4>
+                  </div>
+                  <div class="col m-auto p-3">
+                    <p class="m-auto">
+                      Details Coming Soon.       
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row p-5 faq" id="faq">
+            <div class="col-md-12 py-5">
+              <h2 class="text-center wow fadeInDown" data-wow-delay="0.4s">Frequently Asked Questions (FAQ)</h2>
+            </div>
+
+            <div class="accordion">
+
+              <div class="card faqCard wow fadeIn" data-wow-delay="0.4s">
+                  <button class="card-header btn faqBtn collapsed" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" >
+                    <i class="fas fa-angle-right"></i> Have you been vetted by the Police?
+                  </button>
+                <div id="collapse1" class="collapse">
+                  <div class="card-body">
+                    Yes, I have an up to date DBS (Disclosure and Barring Service) certificate.
+                  </div>
+                </div>
+              </div>
+
+              <div class="card faqCard wow fadeIn" data-wow-delay="0.4s">
+                <button class="card-header btn faqBtn collapsed" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" >
+                  <i class="fas fa-angle-right"></i> Do you have a maths degree?
+                </button>
+                <div id="collapse2" class="collapse">
+                  <div class="card-body">
+                    Yes, I have a BSc Hons degree in Mathematics from King’s College, London.
+                  </div>
+                </div>
+              </div>
+              
+              <div class="card faqCard wow fadeIn" data-wow-delay="0.4s">
+                <button class="card-header btn faqBtn collapsed" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" >
+                  <i class="fas fa-angle-right"></i> When did you start tutoring?
+                </button>
+                <div id="collapse3" class="collapse">
+                  <div class="card-body">
+                    I started a tutoring business over 10 years ago after tutoring my sons and niece at both GCSE and ‘A’ level. All three achieved A* grades at each level.
+                  </div>
+                </div>
+              </div>
+
+              <div class="card faqCard wow fadeIn" data-wow-delay="0.4s">
+                <button class="card-header btn faqBtn collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" >
+                  <i class="fas fa-angle-right"></i> Are you a qualified teacher?
+                </button>
+                <div id="collapse4" class="collapse">
+                  <div class="card-body">
+                    No, after leaving university I worked in law enforcement for 20+ years becoming a senior manager. I am reliable and trustworthy and have excellent communication skills. Furthermore, I have a proven track record of leadership and achievement and believe that these skills and abilities are transferable and key to becoming a great teacher.
+                  </div>
+                </div>
+              </div>
+
+              <div class="card faqCard wow fadeIn" data-wow-delay="0.4s">
+                <button class="card-header btn faqBtn collapsed" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" >
+                  <i class="fas fa-angle-right"></i> Which maths specifications do you teach for ‘A’ level?
+                </button>
+                <div id="collapse5" class="collapse">
+                  <div class="card-body">
+                    I teach Edexcel, AQA and OCR.
+                  </div>
+                </div>
+              </div>
+
+              <div class="card faqCard wow fadeIn" data-wow-delay="0.4s">
+                <button class="card-header btn faqBtn collapsed" type="button" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" >
+                  <i class="fas fa-angle-right"></i> What sort of grades do your ‘A’ level students get?
+                </button>
+                <div id="collapse6" class="collapse">
+                  <div class="card-body">
+                    If I tutor a student for a prolonged period they typically achieve a B or above although most will attain an A or A*. In 2019 one of my students (Illya) achieved an A* (92%) at ‘A’ level maths in one year. I often have students come to me after failing maths or not getting the grades they need and I have many examples of significant improvements in grades (see my reviews). In 2019 all of my ‘A’ level students achieved the grades they required for the university of their choice. In 2020, although there won’t be any exams, I expect a high percentage of A and A*’s.
+                  </div>
+                </div>
+              </div>
+
+              <div class="card faqCard wow fadeIn" data-wow-delay="0.4s">
+                <button class="card-header btn faqBtn collapsed" type="button" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" >
+                  <i class="fas fa-angle-right"></i> Do you do virtual tutoring?
+                </button>
+                <div id="collapse7" class="collapse">
+                  <div class="card-body">
+                    I prefer to deliver a lesson one-to-one in person, however, I can deliver lessons using Skype. This worked well during the Covid-19 outbreak.
+                  </div>
+                </div>
+              </div>
+
+              <div class="card faqCard wow fadeIn" data-wow-delay="0.4s">
+                <button class="card-header btn faqBtn collapsed" type="button" data-toggle="collapse" data-target="#collapse8" aria-expanded="false" >
+                  <i class="fas fa-angle-right"></i> How far are you prepared to travel to tutor?
+                </button>
+                <div id="collapse8" class="collapse">
+                  <div class="card-body">
+                    If you reside within a 5 mile radius of Bessacarr, Doncaster I will travel to you at no cost. I am prepared to travel further afield but will include fuel expenses.
+                  </div>
+                </div>
+              </div>
+
+              <div class="card faqCard wow fadeIn" data-wow-delay="0.4s">
+                <button class="card-header btn faqBtn collapsed" type="button" data-toggle="collapse" data-target="#collapse9" aria-expanded="false" >
+                  <i class="fas fa-angle-right"></i> Do you issue homework?
+                </button>
+                <div id="collapse9" class="collapse">
+                  <div class="card-body">
+                    Yes. Homework is issued after every lesson and it’s very important that this is completed so that I and the student know that the topic is fully understood.
+                  </div>
+                </div>
+              </div>
+
+              <div class="card faqCard wow fadeIn" data-wow-delay="0.4s">
+                <button class="card-header btn faqBtn collapsed" type="button" data-toggle="collapse" data-target="#collapse10" aria-expanded="false" >
+                  <i class="fas fa-angle-right"></i> Do you do home schooling?
+                </button>
+                <div id="collapse10" class="collapse">
+                  <div class="card-body">
+                    Yes. I have lots of experience of home tutoring and have even set up classrooms.
+                  </div>
+                </div>
+              </div>
+
+              <div class="card faqCard wow fadeIn" data-wow-delay="0.4s">
+                <button class="card-header btn faqBtn collapsed" type="button" data-toggle="collapse" data-target="#collapse11" aria-expanded="false" >
+                  <i class="fas fa-angle-right"></i> Would you be prepared to teach a small group of students for a reduced fee?
+                </button>
+                <div id="collapse11" class="collapse">
+                  <div class="card-body">
+                    It depends. Can you please give me a call on 07432 263120 to discuss.
+                  </div>
+                </div>
+              </div>
+
+              <div class="card faqCard wow fadeIn" data-wow-delay="0.4s">
+                <button class="card-header btn faqBtn collapsed" type="button" data-toggle="collapse" data-target="#collapse12" aria-expanded="false" >
+                  <i class="fas fa-angle-right"></i> Would you recommend taking ‘A’ level further maths?
+                </button>
+                <div id="collapse12" class="collapse">
+                  <div class="card-body">
+                    It depends. If you want to go to university to study a maths related degree I would recommend taking further maths, if not, take standard ‘A’ level maths. Further maths is much harder but some Russell Group universities prefer it.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        
+      
           <div class="row pt-5 contact" id="contact">
             <div class="col-md-12">
               <h2 class="text-center wow fadeInDown" data-wow-delay="0.4s">Contact</h2>
             </div>
           </div>
-          
            
-          <form class="row contact" id="contact-form" method="post" action="contact-form-handler.php">
+          <form class="row contact" id="contact-form" method="post" action="send_form_email.php">
             <div class="form-group col-md-6">
               
-              <input name="name" type="name" class="form-control wow fadeInDown" data-wow-delay="0.3s" id="nameInput" placeholder="Your Name">
+              <input name="name" type="text" class="form-control wow fadeInDown" data-wow-delay="0.3s" id="nameInput" placeholder="Your Name">
             </div>
             <div class="form-group col-md-6">
               
@@ -168,77 +565,46 @@
             </div>
             <div class="form-group col-md-12">
               
-              <textarea name="message" type="" class="form-control wow fadeInDown" data-wow-delay="0.3s" id="messageInput" placeholder="Your Message"></textarea>
+              <textarea name="message" type="message" class="form-control messageForm wow fadeInDown" data-wow-delay="0.3s" id="messageInput" placeholder="Your Message"></textarea>
             </div>
-            <button type="submit" class="btn btn-block col-md-12 my-5 wow fadeInUp" data-wow-delay="0.4s">Get in touch</button>
+
+            <div class="col-md-12 text-center">
+              <button type="submit" class="btn contactBtn my-5 wow fadeInUp" data-wow-delay="0.4s">Get in touch</button>
+            </div>
+            
           </form>
 
-          <form name="contactform" method="post" action="send_form_email.php">
-            <table width="450px">
-            <tr>
-             <td valign="top">
-              <label for="first_name">First Name *</label>
-             </td>
-             <td valign="top">
-              <input  type="text" name="first_name" maxlength="50" size="30">
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <label for="last_name">Last Name *</label>
-             </td>
-             <td valign="top">
-              <input  type="text" name="last_name" maxlength="50" size="30">
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <label for="email">Email Address *</label>
-             </td>
-             <td valign="top">
-              <input  type="text" name="email" maxlength="80" size="30">
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <label for="telephone">Telephone Number</label>
-             </td>
-             <td valign="top">
-              <input  type="text" name="telephone" maxlength="30" size="30">
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <label for="comments">Comments *</label>
-             </td>
-             <td valign="top">
-              <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
-             </td>
-            </tr>
-            <tr>
-             <td colspan="2" style="text-align:center">
-              <input type="submit" value="Submit">   <a href="http://www.freecontactform.com/email_form.php">Email Form</a>
-             </td>
-            </tr>
-            </table>
-            </form>
-
           <div class="row" id="copyright">
+
+            <div class="col-md-4  text-center my-2 wow fadeIn" data-wow-delay="0.4s">
+              <i class="fas fa-envelope-square fa-2x"></i>
+              <a href="mailto:gradu8maths@gmail.com">
+                <p class="underline a-contact">
+                  gradu8maths@gmail.com
+                </p>
+              </a>
+            </div>
+            <div class="col-md-4  text-center my-2 wow fadeIn" data-wow-delay="0.4s">
+              <i class="fas fa-phone-square-alt fa-2x"></i>
+              <a href="tel:07432263120">
+                <p class="underline a-contact">
+                  07432 263120
+                </p>
+              </a>
+            </div>
+            <div class="col-md-4 text-center my-2 wow fadeIn" data-wow-delay="0.4s">
+              <i class="fab fa-facebook-square fa-2x"></i>
+              <a href="https://www.facebook.com/Gradu8maths/" target="_blank">
+                <p class="underline a-contact">
+                  facebook
+                </p>
+              </a>
+            </div>
+
             <div class="col-md-12">
               <p class="pt-4">Gradu8 Maths &copy; 2020</p>
             </div>
           </div>
-          
-
-
-          
-          
-          
-          
-
-
-
-
       
         </div>
       </main>
@@ -259,9 +625,14 @@
 
 
 
-
-
-
+    <script>
+      $(function () {
+        $(document).scroll(function () {
+          var $nav = $(".fixed-top");
+          $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        });
+      });
+    </script>
     <script src="wow.min.js"></script>
     <script>
         new WOW().init();

@@ -1,12 +1,33 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http_equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <title>Gradu8 Maths: Doncaster Maths Tutoring</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animate.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2|Montserrat|Muli|Quicksand|Raleway|Sen&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" data-auto-replace-svg="nest"></script>
+</head>
 <?php
+
 if(isset($_POST['email'])) {
  
-    // EDIT THE 2 LINES BELOW AS REQUIRED
-    $email_to = "samstoppani@gmail.com";
+    $email_to = "gradu8maths@gmail.com";
     $email_subject = "Gradu8 Maths Enquiry";
  
     function died($error) {
-        // your error code can go here
+        // error code
+        echo "<body style='background-color:rgb(238, 232, 222)'>";
         echo "We are very sorry, but there were error(s) found with the form you submitted. ";
         echo "These errors appear below.<br /><br />";
         echo $error."<br /><br />";
@@ -14,23 +35,16 @@ if(isset($_POST['email'])) {
         die();
     }
  
- 
     // validation expected data exists
-    if(!isset($_POST['first_name']) ||
-        !isset($_POST['last_name']) ||
+    if(!isset($_POST['name']) ||
         !isset($_POST['email']) ||
-        !isset($_POST['telephone']) ||
-        !isset($_POST['comments'])) {
+        !isset($_POST['message'])) {
         died('We are sorry, but there appears to be a problem with the form you submitted.');       
     }
  
-     
- 
-    $first_name = $_POST['first_name']; // required
-    $last_name = $_POST['last_name']; // required
+    $name = $_POST['name']; // required
     $email_from = $_POST['email']; // required
-    $telephone = $_POST['telephone']; // not required
-    $comments = $_POST['comments']; // required
+    $message = $_POST['message']; // required
  
     $error_message = "";
     $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
@@ -41,16 +55,12 @@ if(isset($_POST['email'])) {
  
     $string_exp = "/^[A-Za-z .'-]+$/";
  
-  if(!preg_match($string_exp,$first_name)) {
-    $error_message .= 'The First Name you entered does not appear to be valid.<br />';
+  if(!preg_match($string_exp,$name)) {
+    $error_message .= 'The Name you entered does not appear to be valid.<br />';
   }
  
-  if(!preg_match($string_exp,$last_name)) {
-    $error_message .= 'The Last Name you entered does not appear to be valid.<br />';
-  }
- 
-  if(strlen($comments) < 2) {
-    $error_message .= 'The Comments you entered do not appear to be valid.<br />';
+  if(strlen($message) < 2) {
+    $error_message .= 'The Message you entered do not appear to be valid.<br />';
   }
  
   if(strlen($error_message) > 0) {
@@ -65,26 +75,38 @@ if(isset($_POST['email'])) {
       return str_replace($bad,"",$string);
     }
  
-     
- 
-    $email_message .= "First Name: ".clean_string($first_name)."\n";
-    $email_message .= "Last Name: ".clean_string($last_name)."\n";
+    $email_message .= "Name: ".clean_string($name)."\n";
     $email_message .= "Email: ".clean_string($email_from)."\n";
-    $email_message .= "Telephone: ".clean_string($telephone)."\n";
-    $email_message .= "Comments: ".clean_string($comments)."\n";
+    $email_message .= "Message: ".clean_string($message)."\n";
  
 // create email headers
 $headers = 'From: '.$email_from."\r\n".
 'Reply-To: '.$email_from."\r\n" .
 'X-Mailer: PHP/' . phpversion();
-@mail($email_to, $email_subject, $email_message, $headers);  
+@mail($email_to, $email_subject, $email_message, $headers);
 ?>
- 
-<!-- include your own success html here -->
- 
-Thank you for contacting us. We will be in touch with you very soon.
- 
+<body>
+    <div class="row h-100">
+        <div class="d-flex mx-auto align-items-center">
+            <div class="col-12">
+                <h1 class="text-center wow fadeInUp" data-wow-delay="0.4s">
+                    GRADU8 MATHS
+                </h1>
+                 <h4 class="text-center wow fadeInUp" data-wow-delay="0.5s">
+                    Thank you for getting in touch. I will contact you shortly.
+                </h4>
+            </div>
+
+        </div>
+    </div>
+  <script src="wow.min.js"></script>
+  <script>
+        new WOW().init();
+  </script>
+</body>
 <?php
  
 }
 ?>
+
+</html>
